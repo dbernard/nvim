@@ -1,14 +1,15 @@
 #!/bin/sh
 
 # Setup
-# NOTE: use inspiration from https://github.com/ChristianChiarulli/LunarVim/blob/master/utils/installer/install.sh
 # 1) install dein
 # 2) install xsel if ubuntu
 # 3) pip install pynvim
 # 4) npm install neovim
 # 5) install vim plugins (maybe `nvim +'call dein#install()' +qall`)
-# 6) set runtimepath+=/Users/dylan/.config/nvim/dein/repos/github.com/junegunn/fzf.vim
-# 7) Install ripgrep
+# 6) Install ripgrep
+
+set -o nounset # error when referencing undefined variable
+set -o errexit # exit when command fails
 
 checkcurrentdir() {
     cd $(dirname $0)
@@ -38,7 +39,7 @@ warnmissingrg() {
 installpynvim() {
     echo " - ❌ pynvim missing. Installing it now..."
     pip3 install pynvim --user
-    echo " - ✅ pynvim installed" 
+    echo " - ✅ pynvim installed"
 }
 
 installdein() {
@@ -54,7 +55,7 @@ installdein() {
     sh ./dein_installer.sh $INSTALL_DIR
     echo " - Cleaning up..."
     rm dein_installer.sh
-    echo " - ✅ dein installed" 
+    echo " - ✅ dein installed"
 }
 
 installplugins() {

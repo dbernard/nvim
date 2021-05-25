@@ -23,13 +23,19 @@ checkcurrentdir() {
 errormissingpip() {
     echo "ERROR: No pip installed."
     echo "Please install pip (pip3) before proceeding."
-    exit
+    exit 1
 }
 
 errormissingnode() {
     echo "ERROR: No Node installed."
     echo "Please install Node before proceeding."
-    exit
+    exit 1
+}
+
+errormissingnvim() {
+    echo "ERROR: No Neovim installed."
+    echo "Please install Neovim before proceeding."
+    exit 1
 }
 
 warnmissingrg() {
@@ -71,6 +77,8 @@ echo "##########################"
 checkcurrentdir
 
 echo "Checking dependencies..."
+
+which nvim >/dev/null && echo " - ✅ Neovim installed" || errormissingnvim
 
 # check for ripgrep
 which rg >/dev/null && echo " - ✅ ripgrep installed" || warnmissingrg

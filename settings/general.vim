@@ -30,19 +30,9 @@ set noshowmode                         " We dont need to see -- INSERT -- anymor
 set nobackup                           " Recommended by coc
 set nowritebackup                      " Recommended by coc
 set updatetime=300                     " Faster completion
-set timeoutlen=1000                     " Faster than default of 1000ms (which-key plug)
+set timeoutlen=500                     " Faster than default of 1000ms (which-key plug)
 set formatoptions-=cro                 " Stop newline continuation of comments
 set clipboard=unnamedplus              " Copy / Paste between vim and everything else
 set termguicolors                      " Set to true for colorizer
-
-" OneDark theme
-let g:onedark_hide_endbuffer=1
-let g:onedark_termcolors=256
-let g:onedark_terminal_italics=1
-colorscheme onedark
-
-let g:lightline = {
-  \ 'colorscheme': 'onedark',
-  \ }
 
 au! BufWritePost $MYVIMRC source %     " Auto source when writing to init.vim

@@ -34,5 +34,6 @@ set timeoutlen=500                     " Faster than default of 1000ms (which-ke
 set formatoptions-=cro                 " Stop newline continuation of comments
 set clipboard=unnamedplus              " Copy / Paste between vim and everything else
 set termguicolors                      " Set to true for colorizer
+set colorcolumn=80                     " Set a ruler at 80 characters
 
 au! BufWritePost $MYVIMRC source %     " Auto source when writing to init.vim

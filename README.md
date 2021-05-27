@@ -12,3 +12,4 @@ Clone this directory to `~/.config/nvim` and run `./setup.sh`.
 8. Hide preview for FZF file finder? It truncates long paths and doesn't seem as useful.
 9. Dashboard?
 10. Nerd Font compatible font + dev icons? (for fun)
+11. Customize nN behavior

@@ -7,7 +7,7 @@ nnoremap <leader>g :Rg<CR>
 nnoremap <leader>m :Marks<CR>
 
 let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
-let $FZF_DEFAULT_COMMAND='rg --files --hidden'
+let $FZF_DEFAULT_COMMAND='rg --files --hidden --ignore-file "$HOME/.config/nvim/settings/plug/.fzfignore"'
 
 " Custom formatting FZF
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
@@ -34,7 +34,7 @@ command! -bang -nargs=? -complete=dir Files
 " Get text in files with Rg
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   'rg --column --line-number --no-heading --color=always --smart-case --ignore-file "$HOME/.config/nvim/settings/plug/.fzfignore" '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
 
 " Ripgrep advanced

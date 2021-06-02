@@ -25,6 +25,7 @@ call dein#add('airblade/vim-rooter') " Change vim's working dir for fzf
 call dein#add('norcalli/nvim-colorizer.lua') " Shows hex/rgb/etc colors
 call dein#add('junegunn/rainbow_parentheses.vim')
 call dein#add('mengelbrecht/lightline-bufferline') " Open buffers add-on for lightline
+call dein#add('nvim-treesitter/nvim-treesitter')
 
 " Required:
 call dein#end()

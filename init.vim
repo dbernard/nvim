@@ -8,6 +8,7 @@ source $HOME/.config/nvim/settings/plug/lightline.vim
 source $HOME/.config/nvim/settings/theme.vim
 " Lua
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
+luafile $HOME/.config/nvim/lua/treesitter.lua
 
 " Required:
 filetype plugin indent on

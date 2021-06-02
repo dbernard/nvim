@@ -2,14 +2,27 @@
 
 Clone this directory to `~/.config/nvim` and run `./setup.sh`.
 
+### Treesitter
+
+[Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) is installed
+with the rest of the plugins listing in `plugins.vim`, but parsers for each
+language still need to be installed manually: `:TSInstall python`.
+
+Recommended languages:
+ - python
+ - bash
+ - lua
+ - javascript
+ - tsx
+ - html
+ - css
+
+ You can keep these updated with `TSUpdate`.
+
 ## TODO
-1. CoC? Maybe just treesitter?
-2. Fix tmux on ubuntu (cant find my prompt, prob not a nvim config issue)
 3. Customize which_key menu
 5. Keybind for maximizing window
-6. Fzf should ignore junk (.po files, for example)
 7. Recolor python theme (This might be done if I set up treesitter)
-8. Hide preview for FZF file finder? It truncates long paths and doesn't seem as useful.
 9. Dashboard?
 10. Nerd Font compatible font + dev icons? (for fun)
 11. Customize nN behavior

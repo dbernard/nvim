@@ -21,8 +21,5 @@ Recommended languages:
 
 ## TODO
 3. Customize which_key menu
-5. Keybind for maximizing window
-7. Recolor python theme (This might be done if I set up treesitter)
 9. Dashboard?
 10. Nerd Font compatible font + dev icons? (for fun)
-11. Customize nN behavior

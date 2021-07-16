@@ -20,6 +20,7 @@ Recommended languages:
  You can keep these updated with `TSUpdate`.
 
 ## TODO
+1. :BigScreen command to blow up font size while sharing
 3. Customize which_key menu
 9. Dashboard?
 10. Nerd Font compatible font + dev icons? (for fun)

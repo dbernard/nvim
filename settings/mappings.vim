@@ -7,3 +7,6 @@ nnoremap <leader>q :bd<CR>
 
 " Alternative way to save
 nnoremap <C-s> :w<CR>
+
+" isort
+nnoremap <leader>i :Isort<CR>

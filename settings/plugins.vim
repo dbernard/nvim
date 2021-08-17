@@ -27,6 +27,7 @@ call dein#add('junegunn/rainbow_parentheses.vim')
 call dein#add('mengelbrecht/lightline-bufferline') " Open buffers add-on for lightline
 call dein#add('nvim-treesitter/nvim-treesitter')
 call dein#add('tpope/vim-fugitive')
+call dein#add('fisadev/vim-isort') " isort for Python
 
 " Required:
 call dein#end()

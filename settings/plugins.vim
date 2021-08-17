@@ -28,6 +28,7 @@ call dein#add('mengelbrecht/lightline-bufferline') " Open buffers add-on for lig
 call dein#add('nvim-treesitter/nvim-treesitter')
 call dein#add('tpope/vim-fugitive')
 call dein#add('fisadev/vim-isort') " isort for Python
+call dein#add('voldikss/vim-floaterm') " Terminal management
 
 " Required:
 call dein#end()

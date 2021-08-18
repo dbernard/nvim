@@ -10,6 +10,7 @@ source $HOME/.config/nvim/settings/plug/floaterm.vim
 " Lua
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 luafile $HOME/.config/nvim/lua/treesitter.lua
+luafile $HOME/.config/nvim/lua/which_key.lua
 
 " Required:
 filetype plugin indent on

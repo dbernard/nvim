@@ -7,6 +7,7 @@ source $HOME/.config/nvim/settings/plug/fzf.vim
 source $HOME/.config/nvim/settings/plug/rainbow_parentheses.vim
 source $HOME/.config/nvim/settings/plug/lightline.vim
 source $HOME/.config/nvim/settings/plug/floaterm.vim
+source $HOME/.config/nvim/settings/plug/ale.vim
 " Lua
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 luafile $HOME/.config/nvim/lua/treesitter.lua

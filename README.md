@@ -2,6 +2,9 @@
 
 Clone this directory to `~/.config/nvim` and run `./setup.sh`.
 
+### Other Resources
+Patched font required for Telescope devicons. Recommend the Hack Nerd Font.
+
 ### Treesitter
 
 [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) is installed
@@ -20,8 +23,5 @@ Recommended languages:
  You can keep these updated with `TSUpdate`.
 
 ## TODO
-1. float term
 2. lazy git
-3. Customize which_key menu
 9. Dashboard?
-10. Nerd Font compatible font + dev icons? (for fun)

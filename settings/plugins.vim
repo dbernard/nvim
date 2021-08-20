@@ -30,6 +30,9 @@ call dein#add('tpope/vim-fugitive')
 call dein#add('fisadev/vim-isort') " isort for Python
 call dein#add('voldikss/vim-floaterm') " Terminal management
 call dein#add('dense-analysis/ale') " Ale for async linting
+call dein#add('nvim-lua/plenary.nvim') " Telescope requirement
+call dein#add('nvim-telescope/telescope.nvim') " Fuzzy finder
+call dein#add('kyazdani42/nvim-web-devicons') " Devicons for Telescope
 
 " Required:
 call dein#end()

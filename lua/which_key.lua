@@ -16,4 +16,9 @@ wk.register({
     h = { "<cmd>lua require('telescope.builtin').help_tags()<cr>", "Help Tags" },
     b = { "<cmd>lua require('telescope.builtin').file_browser()<cr>", "File Browser" },
   },
+  s = {
+    name = "+session",
+    s = { "<cmd>SessionSave<cr>", "Session Save" },
+    l = { "<cmd>SessionLoad<cr>", "Session Load" },
+  },
 }, { prefix = "<leader>" })

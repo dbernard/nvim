@@ -75,5 +75,5 @@ let g:dashboard_custom_footer = [
 \ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
 \ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
 \ '                                                       ',
-\ '                   loaded '.s:total_plugins.' plugins  ',
+\ '                  loaded '.s:total_plugins.' plugins  ',
 \]

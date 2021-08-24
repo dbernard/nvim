@@ -34,6 +34,7 @@ call dein#add('nvim-lua/plenary.nvim') " Telescope requirement
 call dein#add('nvim-telescope/telescope.nvim') " Fuzzy finder
 call dein#add('kyazdani42/nvim-web-devicons') " Devicons for Telescope
 call dein#add('glepnir/dashboard-nvim') " Dashboard
+call dein#add('tpope/vim-commentary') " Commenting across filetypes
 
 " Required:
 call dein#end()

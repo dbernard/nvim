@@ -26,5 +26,6 @@ wk.register({
     s = { "<cmd>Git st<cr>", "Git Status" },
     d = { "<cmd>Git diff<cr>", "Git Diff" },
     b = { "<cmd>Git blame<cr>", "Git Blame" },
+    l = { "<cmd>Gclog -10<cr>", "Git log (limit: 10)" },
   },
 }, { prefix = "<leader>" })

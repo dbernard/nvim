@@ -26,7 +26,7 @@ call dein#add('norcalli/nvim-colorizer.lua') " Shows hex/rgb/etc colors
 call dein#add('junegunn/rainbow_parentheses.vim')
 call dein#add('mengelbrecht/lightline-bufferline') " Open buffers add-on for lightline
 call dein#add('nvim-treesitter/nvim-treesitter')
-call dein#add('tpope/vim-fugitive')
+call dein#add('tpope/vim-fugitive') " Git interface
 call dein#add('fisadev/vim-isort') " isort for Python
 call dein#add('voldikss/vim-floaterm') " Terminal management
 call dein#add('dense-analysis/ale') " Ale for async linting

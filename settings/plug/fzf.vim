@@ -3,7 +3,7 @@ let g:fzf_history_dir = '$HOME/.local/share/fzf-history'
 
 map <C-f> :Files<CR>
 map <leader>b :Buffers<CR>
-nnoremap <leader>g :Rg<CR>
+nnoremap <leader>r :Rg<CR>
 nnoremap <leader>m :Marks<CR>
 
 let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'

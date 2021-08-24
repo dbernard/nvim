@@ -19,7 +19,9 @@
 
 ## Setting up
 
-Clone this directory to `~/.config/nvim` and run `./setup.sh`.
+Clone this directory to `~/.config/nvim` and run `./scripts/setup.sh`.
+
+Keep plugins up to date with `./scripts/update.sh`.
 
 ### Other Resources
 Patched font required for Telescope devicons. Recommend the Hack Nerd Font.
@@ -43,4 +45,3 @@ Recommended languages:
 
 ## TODO
 2. lazy git
-9. Dashboard?

@@ -14,7 +14,7 @@ let s:dashboard_shortcut['help_tags'] = 'SPC f h'
 let s:dashboard_shortcut_icon = {}
 let s:dashboard_shortcut_icon['last_session'] = ' '
 let s:dashboard_shortcut_icon['find_file'] = ' '
-let s:dashboard_shortcut_icon['find_word'] = '﬜ '
+let s:dashboard_shortcut_icon['find_word'] = ' '
 let s:dashboard_shortcut_icon['file_browser'] = 'ﱮ '
 let s:dashboard_shortcut_icon['help_tags'] = ' '
 
@@ -61,9 +61,12 @@ let g:dashboard_custom_header = [
 \'  ██▒▒▒▒▒▒▒▒▒▒██████▒▒▒▒▒▒▒▒▒▒██  ',
 \'    ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██    ',
 \'    ██████████████████████████    ',
+\'                                  ',
+\'            dylan.nvim            ',
 \]
 
 " Footer
+let s:total_plugins = len(dein#get())
 let g:dashboard_custom_footer = [
 \ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
 \ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
@@ -71,4 +74,6 @@ let g:dashboard_custom_footer = [
 \ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
 \ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
 \ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
+\ '                                                       ',
+\ '                   loaded '.s:total_plugins.' plugins  ',
 \]

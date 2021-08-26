@@ -1,0 +1,12 @@
+snippet su "setUp method for Django tests" b
+def setUp(self):
+	super().setUp()
+	$1
+endsnippet
+
+snippet sutd "setUpTestData method for Django tests" b
+@classmethod
+def setUpTestData(cls):
+	super().setUpTestData()
+	$1
+endsnippet

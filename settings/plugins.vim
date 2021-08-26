@@ -35,6 +35,8 @@ call dein#add('nvim-telescope/telescope.nvim') " Fuzzy finder
 call dein#add('kyazdani42/nvim-web-devicons') " Devicons for Telescope
 call dein#add('glepnir/dashboard-nvim') " Dashboard
 call dein#add('tpope/vim-commentary') " Commenting across filetypes
+call dein#add('SirVer/ultisnips') " Snippets engine
+call dein#add('honza/vim-snippets') " Collection of snippets for UltiSnips
 
 " Required:
 call dein#end()

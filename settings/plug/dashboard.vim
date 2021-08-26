@@ -19,7 +19,7 @@ let s:dashboard_shortcut_icon['file_browser'] = 'ﱮ '
 let s:dashboard_shortcut_icon['help_tags'] = ' '
 
 " Dashboard Sections
-hi DashboardShortCut guifg=Orange1
+hi DashboardShortCut guifg=HotPink
 let g:dashboard_custom_section = {
       \'last_session': {
         \'description': [s:dashboard_shortcut_icon['last_session'].'Open last session        '.s:dashboard_shortcut['last_session']],

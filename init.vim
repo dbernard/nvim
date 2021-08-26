@@ -9,6 +9,7 @@ source $HOME/.config/nvim/settings/plug/lightline.vim
 source $HOME/.config/nvim/settings/plug/floaterm.vim
 source $HOME/.config/nvim/settings/plug/ale.vim
 source $HOME/.config/nvim/settings/plug/dashboard.vim
+source $HOME/.config/nvim/settings/plug/ultisnips.vim
 
 " Lua
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua

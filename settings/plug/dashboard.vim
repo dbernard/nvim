@@ -1,6 +1,6 @@
 " Dashboard config
 let g:dashboard_default_executive = 'telescope'
-let g:dashboard_session_directory = '$HOME/.cache/nvim/session'
+let g:dashboard_session_directory = $HOME.'/.cache/nvim/session'
 
 " Shortcuts
 let s:dashboard_shortcut = {}
@@ -19,6 +19,7 @@ let s:dashboard_shortcut_icon['file_browser'] = 'ﱮ '
 let s:dashboard_shortcut_icon['help_tags'] = ' '
 
 " Dashboard Sections
+hi DashboardShortCut guifg=Orange1
 let g:dashboard_custom_section = {
       \'last_session': {
         \'description': [s:dashboard_shortcut_icon['last_session'].'Open last session        '.s:dashboard_shortcut['last_session']],
@@ -67,6 +68,12 @@ let g:dashboard_custom_header = [
 
 " Footer
 let s:total_plugins = len(dein#get())
+let has_py3_support_icon = ""
+if has("python3")
+  let has_py3_support_icon = ""
+endif
+
+hi DashboardFooter guifg=PaleGreen3
 let g:dashboard_custom_footer = [
 \ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
 \ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
@@ -76,4 +83,5 @@ let g:dashboard_custom_footer = [
 \ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
 \ '                                                       ',
 \ '                  loaded '.s:total_plugins.' plugins  ',
+\ '                 '.has_py3_support_icon.' Python 3 support',
 \]

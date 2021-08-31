@@ -7,6 +7,8 @@ wk.register({
     t = { "<cmd>FloatermToggle<cr>", "Toggle Terminal" }, -- toggle a terminal
     p = { "<cmd>FloatermNew python<cr>", "Python Terminal" }, -- open a python shell
     f = { "<cmd>FloatermNew fzf<cr>", "fzf Terminal" }, -- open an fzf session
+    s = { "<cmd>FloatermShow!<cr>", "Show Terminals" }, -- show ALL terminals
+    h = { "<cmd>FloatermHide!<cr>", "Hide Terminals" }, -- hide ALL terminals
   },
   f = {
     name = "+finder",

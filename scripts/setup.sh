@@ -14,7 +14,7 @@ set -o errexit # exit when command fails
 checkcurrentdir() {
     cd $(dirname $0)
 
-    if [ "$PWD" != "${HOME}/.config/nvim" ]; then
+    if [ "$PWD" != "${HOME}/.config/nvim/scripts" ]; then
       echo "ERROR: This repo must be cloned to ~/.config/nvim"
       exit 1
     fi

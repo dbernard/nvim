@@ -1,13 +1,5 @@
 #!/bin/sh
 
-# Setup
-# 1) install dein
-# 2) install xsel if ubuntu
-# 3) pip install pynvim
-# 4) npm install neovim
-# 5) install vim plugins (maybe `nvim +'call dein#install()' +qall`)
-# 6) Install ripgrep
-
 set -o nounset # error when referencing undefined variable
 set -o errexit # exit when command fails
 
@@ -48,25 +40,9 @@ installpynvim() {
     echo " - ✅ pynvim installed"
 }
 
-installdein() {
-    INSTALL_DIR="${HOME}/.config/nvim/dein"
-    echo "Installing dein for plugin mangement..."
-    if [ -e "$INSTALL_DIR" ]; then
-        echo " - 🆗 Dein directory already exists (${INSTALL_DIR}). Skipping."
-        return
-    fi
-    echo " - Fetching dein..."
-    curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > dein_installer.sh
-    echo " - Running installer..."
-    sh ./dein_installer.sh $INSTALL_DIR
-    echo " - Cleaning up..."
-    rm dein_installer.sh
-    echo " - ✅ dein installed"
-}
-
 installplugins() {
     echo "Installing plugins..."
-    nvim +'call dein#install()' +qall
+    nvim +'PackerSync' +qall
     echo " - ✅ plugins installed"
 }
 
@@ -91,8 +67,6 @@ which node >/dev/null && echo " - ✅ node installed" || errormissingnode
 
 # install pynvim
 pip3 list | grep pynvim >/dev/null && echo " - ✅ pynvim installed" || installpynvim
-
-installdein
 
 installplugins
 

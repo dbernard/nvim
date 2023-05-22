@@ -56,9 +56,9 @@ installdein() {
         return
     fi
     echo " - Fetching dein..."
-    curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > dein_installer.sh
+    curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh > dein_installer.sh
     echo " - Running installer..."
-    sh ./dein_installer.sh $INSTALL_DIR
+    sh ./dein_installer.sh -uNC $INSTALL_DIR
     echo " - Cleaning up..."
     rm dein_installer.sh
     echo " - ✅ dein installed"

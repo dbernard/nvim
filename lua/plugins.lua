@@ -45,7 +45,10 @@ end
 return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   -- My plugins here
-  use 'joshdick/onedark.vim'
+  use {
+    'joshdick/onedark.vim',
+    config = function() require("theme-onedark") end
+  }
   use {
     'itchyny/lightline.vim',
     config = function() require("lightline") end

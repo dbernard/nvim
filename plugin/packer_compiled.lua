@@ -120,6 +120,7 @@ _G.packer_plugins = {
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["onedark.vim"] = {
+    config = { "\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18theme-onedark\frequire\0" },
     loaded = true,
     path = "/Users/dylan/.local/share/nvim/site/pack/packer/start/onedark.vim",
     url = "https://github.com/joshdick/onedark.vim"
@@ -195,30 +196,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-treesitter]], true)
 try_loadstring("\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15treesitter\frequire\0", "config", "nvim-treesitter")
 time([[Config for nvim-treesitter]], false)
--- Config for: fzf.vim
-time([[Config for fzf.vim]], true)
-vim.cmd[[source $HOME/.config/nvim/settings/plug/fzf.vim]]
-time([[Config for fzf.vim]], false)
--- Config for: lightline.vim
-time([[Config for lightline.vim]], true)
-try_loadstring("\27LJ\2\n)\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\14lightline\frequire\0", "config", "lightline.vim")
-time([[Config for lightline.vim]], false)
--- Config for: vim-floaterm
-time([[Config for vim-floaterm]], true)
-try_loadstring("\27LJ\2\n(\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\rfloaterm\frequire\0", "config", "vim-floaterm")
-time([[Config for vim-floaterm]], false)
--- Config for: ultisnips
-time([[Config for ultisnips]], true)
-try_loadstring("\27LJ\2\n)\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\14ultisnips\frequire\0", "config", "ultisnips")
-time([[Config for ultisnips]], false)
--- Config for: rainbow_parentheses.vim
-time([[Config for rainbow_parentheses.vim]], true)
-try_loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24rainbow-parentheses\frequire\0", "config", "rainbow_parentheses.vim")
-time([[Config for rainbow_parentheses.vim]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-try_loadstring("\27LJ\2\n.\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\19plug-colorizer\frequire\0", "config", "nvim-colorizer.lua")
-time([[Config for nvim-colorizer.lua]], false)
+-- Config for: onedark.vim
+time([[Config for onedark.vim]], true)
+try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18theme-onedark\frequire\0", "config", "onedark.vim")
+time([[Config for onedark.vim]], false)
 -- Config for: ale
 time([[Config for ale]], true)
 try_loadstring("\27LJ\2\n#\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\bale\frequire\0", "config", "ale")
@@ -227,6 +208,30 @@ time([[Config for ale]], false)
 time([[Config for which-key.nvim]], true)
 try_loadstring("\27LJ\2\n)\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\14which_key\frequire\0", "config", "which-key.nvim")
 time([[Config for which-key.nvim]], false)
+-- Config for: lightline.vim
+time([[Config for lightline.vim]], true)
+try_loadstring("\27LJ\2\n)\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\14lightline\frequire\0", "config", "lightline.vim")
+time([[Config for lightline.vim]], false)
+-- Config for: ultisnips
+time([[Config for ultisnips]], true)
+try_loadstring("\27LJ\2\n)\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\14ultisnips\frequire\0", "config", "ultisnips")
+time([[Config for ultisnips]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+try_loadstring("\27LJ\2\n.\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\19plug-colorizer\frequire\0", "config", "nvim-colorizer.lua")
+time([[Config for nvim-colorizer.lua]], false)
+-- Config for: fzf.vim
+time([[Config for fzf.vim]], true)
+vim.cmd[[source $HOME/.config/nvim/settings/plug/fzf.vim]]
+time([[Config for fzf.vim]], false)
+-- Config for: rainbow_parentheses.vim
+time([[Config for rainbow_parentheses.vim]], true)
+try_loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24rainbow-parentheses\frequire\0", "config", "rainbow_parentheses.vim")
+time([[Config for rainbow_parentheses.vim]], false)
+-- Config for: vim-floaterm
+time([[Config for vim-floaterm]], true)
+try_loadstring("\27LJ\2\n(\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\rfloaterm\frequire\0", "config", "vim-floaterm")
+time([[Config for vim-floaterm]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

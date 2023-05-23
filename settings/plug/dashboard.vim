@@ -67,7 +67,6 @@ let g:dashboard_custom_header = [
 \]
 
 " Footer
-let s:total_plugins = len(dein#get())
 let has_py3_support_icon = ""
 if has("python3")
   let has_py3_support_icon = ""
@@ -82,6 +81,5 @@ let g:dashboard_custom_footer = [
 \ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
 \ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
 \ '                                                       ',
-\ '                  loaded '.s:total_plugins.' plugins  ',
 \ '                 '.has_py3_support_icon.' Python 3 support',
 \]

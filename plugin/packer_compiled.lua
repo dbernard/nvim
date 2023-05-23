@@ -75,14 +75,10 @@ time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ale = {
+    config = { "\27LJ\2\n#\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\bale\frequire\0" },
     loaded = true,
     path = "/Users/dylan/.local/share/nvim/site/pack/packer/start/ale",
     url = "https://github.com/dense-analysis/ale"
-  },
-  ["dashboard-nvim"] = {
-    loaded = true,
-    path = "/Users/dylan/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
-    url = "https://github.com/glepnir/dashboard-nvim"
   },
   fzf = {
     loaded = true,
@@ -90,6 +86,7 @@ _G.packer_plugins = {
     url = "https://github.com/junegunn/fzf"
   },
   ["fzf.vim"] = {
+    config = { "vim.cmd[[source $HOME/.config/nvim/settings/plug/fzf.vim]]" },
     loaded = true,
     path = "/Users/dylan/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
@@ -100,16 +97,19 @@ _G.packer_plugins = {
     url = "https://github.com/mengelbrecht/lightline-bufferline"
   },
   ["lightline.vim"] = {
+    config = { "\27LJ\2\n)\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\14lightline\frequire\0" },
     loaded = true,
     path = "/Users/dylan/.local/share/nvim/site/pack/packer/start/lightline.vim",
     url = "https://github.com/itchyny/lightline.vim"
   },
   ["nvim-colorizer.lua"] = {
+    config = { "\27LJ\2\n.\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\19plug-colorizer\frequire\0" },
     loaded = true,
     path = "/Users/dylan/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-treesitter"] = {
+    config = { "\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15treesitter\frequire\0" },
     loaded = true,
     path = "/Users/dylan/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
@@ -135,6 +135,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["rainbow_parentheses.vim"] = {
+    config = { "\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24rainbow-parentheses\frequire\0" },
     loaded = true,
     path = "/Users/dylan/.local/share/nvim/site/pack/packer/start/rainbow_parentheses.vim",
     url = "https://github.com/junegunn/rainbow_parentheses.vim"
@@ -145,6 +146,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ultisnips = {
+    config = { "\27LJ\2\n)\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\14ultisnips\frequire\0" },
     loaded = true,
     path = "/Users/dylan/.local/share/nvim/site/pack/packer/start/ultisnips",
     url = "https://github.com/SirVer/ultisnips"
@@ -155,6 +157,7 @@ _G.packer_plugins = {
     url = "https://github.com/tpope/vim-commentary"
   },
   ["vim-floaterm"] = {
+    config = { "\27LJ\2\n(\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\rfloaterm\frequire\0" },
     loaded = true,
     path = "/Users/dylan/.local/share/nvim/site/pack/packer/start/vim-floaterm",
     url = "https://github.com/voldikss/vim-floaterm"
@@ -180,6 +183,7 @@ _G.packer_plugins = {
     url = "https://github.com/honza/vim-snippets"
   },
   ["which-key.nvim"] = {
+    config = { "\27LJ\2\n)\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\14which_key\frequire\0" },
     loaded = true,
     path = "/Users/dylan/.local/share/nvim/site/pack/packer/start/which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
@@ -187,6 +191,42 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+try_loadstring("\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15treesitter\frequire\0", "config", "nvim-treesitter")
+time([[Config for nvim-treesitter]], false)
+-- Config for: fzf.vim
+time([[Config for fzf.vim]], true)
+vim.cmd[[source $HOME/.config/nvim/settings/plug/fzf.vim]]
+time([[Config for fzf.vim]], false)
+-- Config for: lightline.vim
+time([[Config for lightline.vim]], true)
+try_loadstring("\27LJ\2\n)\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\14lightline\frequire\0", "config", "lightline.vim")
+time([[Config for lightline.vim]], false)
+-- Config for: vim-floaterm
+time([[Config for vim-floaterm]], true)
+try_loadstring("\27LJ\2\n(\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\rfloaterm\frequire\0", "config", "vim-floaterm")
+time([[Config for vim-floaterm]], false)
+-- Config for: ultisnips
+time([[Config for ultisnips]], true)
+try_loadstring("\27LJ\2\n)\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\14ultisnips\frequire\0", "config", "ultisnips")
+time([[Config for ultisnips]], false)
+-- Config for: rainbow_parentheses.vim
+time([[Config for rainbow_parentheses.vim]], true)
+try_loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24rainbow-parentheses\frequire\0", "config", "rainbow_parentheses.vim")
+time([[Config for rainbow_parentheses.vim]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+try_loadstring("\27LJ\2\n.\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\19plug-colorizer\frequire\0", "config", "nvim-colorizer.lua")
+time([[Config for nvim-colorizer.lua]], false)
+-- Config for: ale
+time([[Config for ale]], true)
+try_loadstring("\27LJ\2\n#\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\bale\frequire\0", "config", "ale")
+time([[Config for ale]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\n)\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\14which_key\frequire\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

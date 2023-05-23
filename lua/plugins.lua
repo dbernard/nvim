@@ -36,31 +36,61 @@ packer.init({
   }
 )
 
+function get_setup(name)
+  return function()
+    require("settings." .. name)
+  end
+end
+
 return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   -- My plugins here
   use 'joshdick/onedark.vim'
-  use 'itchyny/lightline.vim'
-  use 'folke/which-key.nvim'
+  use {
+    'itchyny/lightline.vim',
+    config = function() require("lightline") end
+  }
+  use {
+    'folke/which-key.nvim',
+    config = function() require("which_key") end
+  }
   use {
     'junegunn/fzf.vim',
-    requires = { 'junegunn/fzf', run = ':call fzf#install()' }
+    requires = { 'junegunn/fzf', run = ':call fzf#install()' },
+    config = 'vim.cmd[[source $HOME/.config/nvim/settings/plug/fzf.vim]]'
   }
   use 'airblade/vim-rooter' -- Change vim's working dir for fzf
-  use 'norcalli/nvim-colorizer.lua' -- Shows hex/rgb/etc colors
-  use 'junegunn/rainbow_parentheses.vim'
+  use {
+    'norcalli/nvim-colorizer.lua',
+    config = function() require("plug-colorizer") end
+  } -- Shows hex/rgb/etc colors
+  use {
+    'junegunn/rainbow_parentheses.vim',
+    config = function() require("rainbow-parentheses") end
+  }
   use 'mengelbrecht/lightline-bufferline' -- Open buffers add-on for lightline
-  use 'nvim-treesitter/nvim-treesitter'
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    config = function() require("treesitter") end
+  }
   use 'tpope/vim-fugitive' -- Git interface
   use 'fisadev/vim-isort' -- isort for Python
-  use 'voldikss/vim-floaterm' -- Terminal management
-  use 'dense-analysis/ale' -- Ale for async linting
+  use {
+    'voldikss/vim-floaterm',
+    config = function() require("floaterm") end
+  } -- Terminal management
+  use {
+    'dense-analysis/ale',
+    config = function() require("ale") end
+  } -- Ale for async linting
   use 'nvim-lua/plenary.nvim' -- Telescope requirement
   use 'nvim-telescope/telescope.nvim' -- Fuzzy finder
   use 'kyazdani42/nvim-web-devicons' -- Devicons for Telescope
-  use 'glepnir/dashboard-nvim' -- Dashboard
   use 'tpope/vim-commentary' -- Commenting across filetypes
-  use 'SirVer/ultisnips' -- Snippets engine
+  use {
+    'SirVer/ultisnips',
+    config = function() require("ultisnips") end
+  } -- Snippets engine
   use 'honza/vim-snippets' -- Collection of snippets for UltiSnips
 
   -- Automatically set up your configuration after cloning packer.nvim

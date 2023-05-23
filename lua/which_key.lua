@@ -31,3 +31,5 @@ wk.register({
     l = { "<cmd>Gclog -10<cr>", "Git log (limit: 10)" },
   },
 }, { prefix = "<leader>" })
+
+return wk

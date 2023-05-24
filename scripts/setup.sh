@@ -42,7 +42,7 @@ installpynvim() {
 
 installplugins() {
     echo "Installing plugins..."
-    nvim +'PackerSync' +qall
+    nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
     echo " - ✅ plugins installed"
 }
 

@@ -95,7 +95,7 @@ return packer.startup(function(use)
     config = function() require("ultisnips") end
   } -- Snippets engine
   use 'honza/vim-snippets' -- Collection of snippets for UltiSnips
-  use 'ojroques/vim-oscyank' -- Allow system clipboard access via SSH
+  use 'ojroques/nvim-osc52' -- Allow system clipboard access via SSH
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

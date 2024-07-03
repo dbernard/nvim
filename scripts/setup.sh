@@ -46,6 +46,12 @@ installplugins() {
     echo " - ✅ plugins installed"
 }
 
+installdeps() {
+    echo "Installing other dependencies..."
+    pip3 install isort
+    echo " - ✅ isort installed"
+}
+
 echo "##########################"
 echo "# Starting Neovim setup! #"
 echo "##########################"
@@ -69,5 +75,7 @@ which node >/dev/null && echo " - ✅ node installed" || errormissingnode
 pip3 list | grep pynvim >/dev/null && echo " - ✅ pynvim installed" || installpynvim
 
 installplugins
+
+installdeps
 
 echo "Setup complete!"

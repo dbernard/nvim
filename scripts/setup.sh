@@ -48,7 +48,7 @@ installplugins() {
 
 installdeps() {
     echo "Installing other dependencies..."
-    pip3 install isort
+    pip install isort
     echo " - ✅ isort installed"
 }
 

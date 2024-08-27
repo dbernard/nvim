@@ -4,36 +4,28 @@ if not ok then
   return
 end
 
-wk.register({
-  t = {
-    name = "+terminal",
-    q = { "<cmd>FloatermNew --wintype=popup --height=10<cr>", "Quick Terminal" }, -- create a new popup footer terminal
-    t = { "<cmd>FloatermToggle<cr>", "Toggle Terminal" }, -- toggle a terminal
-    p = { "<cmd>FloatermNew python<cr>", "Python Terminal" }, -- open a python shell
-    f = { "<cmd>FloatermNew fzf<cr>", "fzf Terminal" }, -- open an fzf session
-    s = { "<cmd>FloatermShow!<cr>", "Show Terminals" }, -- show ALL terminals
-    h = { "<cmd>FloatermHide!<cr>", "Hide Terminals" }, -- hide ALL terminals
-  },
-  f = {
-    name = "+finder",
-    f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find Files" },
-    g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "Live Grep" },
-    t = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "Search Buffers" },
-    h = { "<cmd>lua require('telescope.builtin').help_tags()<cr>", "Help Tags" },
-    b = { "<cmd>lua require('telescope.builtin').file_browser()<cr>", "File Browser" },
-  },
-  s = {
-    name = "+session",
-    s = { "<cmd>SessionSave<cr>", "Session Save" },
-    l = { "<cmd>SessionLoad<cr>", "Session Load" },
-  },
-  g = {
-    name = "+git",
-    s = { "<cmd>Git st<cr>", "Git Status" },
-    d = { "<cmd>Git diff<cr>", "Git Diff" },
-    b = { "<cmd>Git blame<cr>", "Git Blame" },
-    l = { "<cmd>Gclog -10<cr>", "Git log (limit: 10)" },
-  },
-}, { prefix = "<leader>" })
+wk.add({
+    { "<leader>f", group = "finder" },
+    { "<leader>fb", "<cmd>lua require('telescope.builtin').file_browser()<cr>", desc = "File Browser" },
+    { "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", desc = "Find Files" },
+    { "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", desc = "Live Grep" },
+    { "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>", desc = "Help Tags" },
+    { "<leader>ft", "<cmd>lua require('telescope.builtin').buffers()<cr>", desc = "Search Buffers" },
+    { "<leader>g", group = "git" },
+    { "<leader>gb", "<cmd>Git blame<cr>", desc = "Git Blame" },
+    { "<leader>gd", "<cmd>Git diff<cr>", desc = "Git Diff" },
+    { "<leader>gl", "<cmd>Gclog -10<cr>", desc = "Git log (limit: 10)" },
+    { "<leader>gs", "<cmd>Git st<cr>", desc = "Git Status" },
+    { "<leader>s", group = "session" },
+    { "<leader>sl", "<cmd>SessionLoad<cr>", desc = "Session Load" },
+    { "<leader>ss", "<cmd>SessionSave<cr>", desc = "Session Save" },
+    { "<leader>t", group = "terminal" },
+    { "<leader>tf", "<cmd>FloatermNew fzf<cr>", desc = "fzf Terminal" },
+    { "<leader>th", "<cmd>FloatermHide!<cr>", desc = "Hide Terminals" },
+    { "<leader>tp", "<cmd>FloatermNew python<cr>", desc = "Python Terminal" },
+    { "<leader>tq", "<cmd>FloatermNew --wintype=popup --height=10<cr>", desc = "Quick Terminal" },
+    { "<leader>ts", "<cmd>FloatermShow!<cr>", desc = "Show Terminals" },
+    { "<leader>tt", "<cmd>FloatermToggle<cr>", desc = "Toggle Terminal" },
+  })
 
 return wk

@@ -49,9 +49,11 @@ return packer.startup(function(use)
     'navarasu/onedark.nvim',
     config = function() require('onedark').load() end
   }
+  use 'kyazdani42/nvim-web-devicons' -- Devicons for Telescope, etc.
   use {
-    'itchyny/lightline.vim',
-    config = function() require("lightline") end
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+    config = function() require("plug_lualine") end
   }
   use {
     'folke/which-key.nvim',
@@ -71,7 +73,6 @@ return packer.startup(function(use)
     'junegunn/rainbow_parentheses.vim',
     config = function() require("rainbow-parentheses") end
   }
-  use 'mengelbrecht/lightline-bufferline' -- Open buffers add-on for lightline
   use {
     'nvim-treesitter/nvim-treesitter',
     config = function() require("treesitter") end
@@ -88,8 +89,7 @@ return packer.startup(function(use)
   } -- Ale for async linting
   use 'nvim-lua/plenary.nvim' -- Telescope requirement
   use 'nvim-telescope/telescope.nvim' -- Fuzzy finder
-  use 'kyazdani42/nvim-web-devicons' -- Devicons for Telescope
-  use 'tpope/vim-commentary' -- Commenting across filetypes
+    use 'tpope/vim-commentary' -- Commenting across filetypes
   use {
     'SirVer/ultisnips',
     config = function() require("ultisnips") end

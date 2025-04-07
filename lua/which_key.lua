@@ -35,6 +35,11 @@ wk.add({
     { "<leader>mde", "<cmd>RenderMarkdown enable<cr>", desc = "Render Markdown enable" },
     { "<leader>mdd", "<cmd>RenderMarkdown disable<cr>", desc = "Render Markdown disable" },
     { "<leader>mdt", "<cmd>RenderMarkdown toggle<cr>", desc = "Render Markdown toggle" },
+    -- Copilot
+    { "<leader>cp", group = "copilot" },
+    { "<leader>cps", "<cmd>Copilot status<cr>", desc = "Copilot status" },
+    { "<leader>cpe", "<cmd>Copilot enable<cr>", desc = "Copilot enable" },
+    { "<leader>cpd", "<cmd>Copilot disable<cr>", desc = "Copilot disable" },
   })
 
 return wk

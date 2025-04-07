@@ -107,6 +107,7 @@ return packer.startup(function(use)
     -- requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- if you prefer nvim-web-devicons
     config = function() require('render-markdown').setup({}) end
   }
+  use 'github/copilot.vim' -- Github Copilot
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

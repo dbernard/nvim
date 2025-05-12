@@ -36,7 +36,7 @@ warnmissingrg() {
 
 installpynvim() {
     echo " - ❌ pynvim missing. Installing it now..."
-    pip3 install pynvim --user
+    pip3 install pynvim
     echo " - ✅ pynvim installed"
 }
 

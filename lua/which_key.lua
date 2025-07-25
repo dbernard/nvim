@@ -4,14 +4,22 @@ if not ok then
   return
 end
 
+-- Setup which-key
+wk.setup({
+  -- Add any setup configuration here if needed
+})
+
+-- Load Telescope builtin functions
+local builtin = require('telescope.builtin')
+
 wk.add({
-    -- finder
+    -- finder (FZF)
     { "<leader>f", group = "finder" },
-    { "<leader>fb", "<cmd>lua require('telescope.builtin').file_browser()<cr>", desc = "File Browser" },
-    { "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", desc = "Find Files" },
-    { "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", desc = "Live Grep" },
-    { "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>", desc = "Help Tags" },
-    { "<leader>ft", "<cmd>lua require('telescope.builtin').buffers()<cr>", desc = "Search Buffers" },
+    { "<leader>ff", builtin.find_files, desc = "Find Files" },
+    { "<leader>fg", builtin.live_grep, desc = "Live Grep" },
+    { "<leader>fb", "<cmd>Buffers<cr>", desc = "Search Buffers" },
+    { "<leader>fm", "<cmd>Marks<cr>", desc = "Search Marks" },
+    { "<leader>fh", "<cmd>RG<cr>", desc = "Advanced Ripgrep" },
     -- git
     { "<leader>g", group = "git" },
     { "<leader>gb", "<cmd>Git blame<cr>", desc = "Git Blame" },

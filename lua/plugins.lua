@@ -36,12 +36,6 @@ packer.init({
   }
 )
 
-function get_setup(name)
-  return function()
-    require("settings." .. name)
-  end
-end
-
 return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   -- My plugins here
@@ -62,7 +56,7 @@ return packer.startup(function(use)
   use {
     'junegunn/fzf.vim',
     requires = { 'junegunn/fzf', run = ':call fzf#install()' },
-    config = 'vim.cmd[[source $HOME/.config/nvim/settings/plug/fzf.vim]]'
+    config = function() require("fzf") end
   }
   use 'airblade/vim-rooter' -- Change vim's working dir for fzf
   use {
@@ -88,7 +82,10 @@ return packer.startup(function(use)
     config = function() require("ale") end
   } -- Ale for async linting
   use 'nvim-lua/plenary.nvim' -- Telescope requirement
-  use 'nvim-telescope/telescope.nvim' -- Fuzzy finder
+  use {
+    'nvim-telescope/telescope.nvim', -- Fuzzy finder
+    config = function() require("telescope-config") end
+  }
     use 'tpope/vim-commentary' -- Commenting across filetypes
   use {
     'SirVer/ultisnips',

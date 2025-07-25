@@ -8,6 +8,10 @@ telescope.setup({
     results_limit = 1000,           -- Limit results to prevent UI freezing
     timeout = 5000,                 -- 5 second timeout for searches
     
+    -- File sorting
+    file_sorter = require('telescope.sorters').get_fuzzy_file,
+    generic_sorter = require('telescope.sorters').get_generic_fuzzy_sorter,
+    
     -- Better file ignoring
     file_ignore_patterns = {
       "node_modules/",

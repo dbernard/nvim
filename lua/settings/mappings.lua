@@ -13,3 +13,6 @@ keymap("n", "<C-s>", ":w<CR>", { silent = true })
 
 -- isort
 keymap("n", "<leader>i", ":Isort<CR>", { silent = true })
+
+-- Dashboard
+keymap("n", "<leader>db", ":Dashboard<CR>", { silent = true })

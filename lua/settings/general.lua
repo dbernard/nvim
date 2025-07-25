@@ -42,7 +42,7 @@ opt.wrapscan = false             -- Don't wrap around buffer when searching
 -- Format options
 opt.formatoptions:remove("cro")  -- Stop newline continuation of comments
 
--- Auto source when writing to init.vim
+-- Auto source when writing to init.lua
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = vim.env.MYVIMRC,
   command = "source %"

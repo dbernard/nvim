@@ -20,6 +20,7 @@ wk.add({
     { "<leader>fb", "<cmd>Buffers<cr>", desc = "Search Buffers" },
     { "<leader>fm", "<cmd>Marks<cr>", desc = "Search Marks" },
     { "<leader>fh", "<cmd>RG<cr>", desc = "Advanced Ripgrep" },
+    { "<leader>fo", function() require("conform").format({ async = true, lsp_fallback = true }) end, desc = "Format File" },
     -- git
     { "<leader>g", group = "git" },
     { "<leader>gb", "<cmd>Git blame<cr>", desc = "Git Blame" },
@@ -48,6 +49,19 @@ wk.add({
     { "<leader>cps", "<cmd>Copilot status<cr>", desc = "Copilot status" },
     { "<leader>cpe", "<cmd>Copilot enable<cr>", desc = "Copilot enable" },
     { "<leader>cpd", "<cmd>Copilot disable<cr>", desc = "Copilot disable" },
+    -- LSP
+    { "<leader>l", group = "lsp" },
+    { "<leader>ld", function() vim.lsp.buf.definition() end, desc = "Go to Definition" },
+    { "<leader>lr", function() vim.lsp.buf.references() end, desc = "References" },
+    { "<leader>ln", function() vim.lsp.buf.rename() end, desc = "Rename" },
+    { "<leader>lh", function() vim.lsp.buf.hover() end, desc = "Hover" },
+    -- Diagnostics
+    { "<C-j>", function() vim.diagnostic.goto_next() end, desc = "Next Diagnostic" },
+    { "<C-k>", function() vim.diagnostic.goto_prev() end, desc = "Previous Diagnostic" },
+    -- Direct mappings
+    { "gd", function() vim.lsp.buf.definition() end, desc = "Go to Definition" },
+    { "gr", function() vim.lsp.buf.references() end, desc = "References" },
+    { "K", function() vim.lsp.buf.hover() end, desc = "Hover" },
   })
 
 return wk

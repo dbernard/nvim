@@ -78,9 +78,17 @@ return packer.startup(function(use)
     config = function() require("config.floaterm") end
   } -- Terminal management
   use {
-    'dense-analysis/ale',
-    config = function() require("config.ale") end
-  } -- Ale for async linting
+    'neovim/nvim-lspconfig',
+    config = function() require("config.lspconfig") end
+  } -- Native LSP configuration
+  use {
+    'stevearc/conform.nvim',
+    config = function() require("config.conform") end
+  } -- Modern formatting
+  use {
+    'mfussenegger/nvim-lint',
+    config = function() require("config.nvim-lint") end
+  } -- Linting via nvim-lint
   use 'nvim-lua/plenary.nvim' -- Telescope requirement
   use {
     'nvim-telescope/telescope.nvim', -- Fuzzy finder
@@ -88,10 +96,9 @@ return packer.startup(function(use)
   }
     use 'tpope/vim-commentary' -- Commenting across filetypes
   use {
-    'SirVer/ultisnips',
-    config = function() require("config.ultisnips") end
-  } -- Snippets engine
-  use 'honza/vim-snippets' -- Collection of snippets for UltiSnips
+    'L3MON4D3/LuaSnip',
+    config = function() require("config.luasnip") end
+  } -- Lua-native snippets engine
   use {
     'ojroques/nvim-osc52',
     config = function() require("config.plug-osc52") end

@@ -36,12 +36,6 @@ packer.init({
   }
 )
 
-function get_setup(name)
-  return function()
-    require("settings." .. name)
-  end
-end
-
 return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   -- My plugins here
@@ -53,51 +47,61 @@ return packer.startup(function(use)
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true },
-    config = function() require("plug_lualine") end
+    config = function() require("config.plug_lualine") end
   }
   use {
     'folke/which-key.nvim',
-    config = function() require("which_key") end
+    config = function() require("config.which_key") end
   }
   use {
     'junegunn/fzf.vim',
     requires = { 'junegunn/fzf', run = ':call fzf#install()' },
-    config = 'vim.cmd[[source $HOME/.config/nvim/settings/plug/fzf.vim]]'
+    config = function() require("config.fzf") end
   }
   use 'airblade/vim-rooter' -- Change vim's working dir for fzf
   use {
     'norcalli/nvim-colorizer.lua',
-    config = function() require("plug-colorizer") end
+    config = function() require("config.plug-colorizer") end
   } -- Shows hex/rgb/etc colors
   use {
     'junegunn/rainbow_parentheses.vim',
-    config = function() require("rainbow-parentheses") end
+    config = function() require("config.rainbow-parentheses") end
   }
   use {
     'nvim-treesitter/nvim-treesitter',
-    config = function() require("treesitter") end
+    config = function() require("config.treesitter") end
   }
   use 'tpope/vim-fugitive' -- Git interface
   use 'fisadev/vim-isort' -- isort for Python
   use {
     'voldikss/vim-floaterm',
-    config = function() require("floaterm") end
+    config = function() require("config.floaterm") end
   } -- Terminal management
   use {
-    'dense-analysis/ale',
-    config = function() require("ale") end
-  } -- Ale for async linting
+    'neovim/nvim-lspconfig',
+    config = function() require("config.lspconfig") end
+  } -- Native LSP configuration
+  use {
+    'stevearc/conform.nvim',
+    config = function() require("config.conform") end
+  } -- Modern formatting
+  use {
+    'mfussenegger/nvim-lint',
+    config = function() require("config.nvim-lint") end
+  } -- Linting via nvim-lint
   use 'nvim-lua/plenary.nvim' -- Telescope requirement
-  use 'nvim-telescope/telescope.nvim' -- Fuzzy finder
+  use {
+    'nvim-telescope/telescope.nvim', -- Fuzzy finder
+    config = function() require("config.telescope-config") end
+  }
     use 'tpope/vim-commentary' -- Commenting across filetypes
   use {
-    'SirVer/ultisnips',
-    config = function() require("ultisnips") end
-  } -- Snippets engine
-  use 'honza/vim-snippets' -- Collection of snippets for UltiSnips
+    'L3MON4D3/LuaSnip',
+    config = function() require("config.luasnip") end
+  } -- Lua-native snippets engine
   use {
     'ojroques/nvim-osc52',
-    config = function() require("plug-osc52") end
+    config = function() require("config.plug-osc52") end
   } -- Allow system clipboard access via SSH
   use {
     'MeanderingProgrammer/render-markdown.nvim',
@@ -108,6 +112,10 @@ return packer.startup(function(use)
     config = function() require('render-markdown').setup({}) end
   }
   use 'github/copilot.vim' -- Github Copilot
+  use {
+    'nvimdev/dashboard-nvim',
+    config = function() require("config.dashboard") end
+  } -- Dashboard startup screen
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

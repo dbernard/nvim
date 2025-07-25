@@ -31,7 +31,7 @@ Patched font required for Telescope devicons. Recommend the Hack Nerd Font.
 ### Treesitter
 
 [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) is installed
-with the rest of the plugins listing in `plugins.vim`, but parsers for each
+with the rest of the plugins listing in `lua/plugins.lua`, but parsers for each
 language still need to be installed manually: `:TSInstall python`.
 
 Recommended languages:

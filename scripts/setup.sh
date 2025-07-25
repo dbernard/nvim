@@ -47,9 +47,9 @@ installplugins() {
 }
 
 installdeps() {
-    echo "Installing other dependencies..."
-    pip install isort
-    echo " - ✅ isort installed"
+    echo "Installing Python dependencies..."
+    pip3 install isort black mypy 'python-lsp-server[all]'
+    echo " - ✅ Python dependencies installed (isort, black, mypy, python-lsp-server)"
 }
 
 echo "##########################"

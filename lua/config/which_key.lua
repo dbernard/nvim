@@ -31,14 +31,29 @@ wk.add({
     { "<leader>s", group = "session" },
     { "<leader>sl", "<cmd>SessionLoad<cr>", desc = "Session Load" },
     { "<leader>ss", "<cmd>SessionSave<cr>", desc = "Session Save" },
-    -- floaterm
+    -- toggleterm
     { "<leader>t", group = "terminal" },
-    { "<leader>tf", "<cmd>FloatermNew fzf<cr>", desc = "fzf Terminal" },
-    { "<leader>th", "<cmd>FloatermHide!<cr>", desc = "Hide Terminals" },
-    { "<leader>tp", "<cmd>FloatermNew python<cr>", desc = "Python Terminal" },
-    { "<leader>tq", "<cmd>FloatermNew --wintype=popup --height=10<cr>", desc = "Quick Terminal" },
-    { "<leader>ts", "<cmd>FloatermShow!<cr>", desc = "Show Terminals" },
-    { "<leader>tt", "<cmd>FloatermToggle<cr>", desc = "Toggle Terminal" },
+    { "<leader>tf", function() 
+        require("toggleterm.terminal").Terminal:new({ cmd = "fzf", direction = "float" }):toggle()
+        vim.defer_fn(function() vim.cmd("startinsert!") end, 50)
+      end, desc = "fzf Terminal" },
+    { "<leader>th", "<cmd>ToggleTermToggleAll<cr>", desc = "Hide Terminals" },
+    { "<leader>tp", function() 
+        require("toggleterm.terminal").Terminal:new({ cmd = "python", direction = "float" }):toggle()
+        vim.defer_fn(function() vim.cmd("startinsert!") end, 50)
+      end, desc = "Python Terminal" },
+    { "<leader>tq", function() 
+        require("toggleterm.terminal").Terminal:new({ direction = "horizontal", size = 10 }):toggle()
+        vim.defer_fn(function() vim.cmd("startinsert!") end, 50)
+      end, desc = "Quick Terminal" },
+    { "<leader>ts", function()
+        vim.cmd("ToggleTermToggleAll")
+        vim.defer_fn(function() vim.cmd("startinsert!") end, 50)
+      end, desc = "Show Terminals" },
+    { "<leader>tt", function()
+        vim.cmd("ToggleTerm direction=float")
+        vim.defer_fn(function() vim.cmd("startinsert!") end, 50)
+      end, desc = "Toggle Terminal" },
     -- markdown
     { "<leader>md", group = "render-markdown" },
     { "<leader>mde", "<cmd>RenderMarkdown enable<cr>", desc = "Render Markdown enable" },

@@ -74,8 +74,9 @@ return packer.startup(function(use)
   use 'tpope/vim-fugitive' -- Git interface
   use 'fisadev/vim-isort' -- isort for Python
   use {
-    'voldikss/vim-floaterm',
-    config = function() require("config.floaterm") end
+    'akinsho/toggleterm.nvim',
+    tag = '*',
+    config = function() require("config.toggleterm") end
   } -- Terminal management
   use {
     'neovim/nvim-lspconfig',

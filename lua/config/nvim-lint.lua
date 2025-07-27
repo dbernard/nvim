@@ -1,5 +1,8 @@
--- Linting with nvim-lint
-local lint = require('lint')
+-- Confirm available
+local ok, lint = pcall(require, "lint")
+if not ok then
+  return  -- plugin not available yet
+end
 
 lint.linters_by_ft = {
   python = { 'mypy', 'flake8' }

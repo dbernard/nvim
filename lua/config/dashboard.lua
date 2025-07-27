@@ -1,4 +1,8 @@
-local dashboard = require("dashboard")
+-- Confirm available
+local ok, dashboard = pcall(require, "dashboard")
+if not ok then
+  return  -- plugin not available yet
+end
 
 dashboard.setup({
   theme = 'hyper',

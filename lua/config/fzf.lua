@@ -1,3 +1,8 @@
+-- Confirm available
+if vim.fn.exists(":FZF") == 0 then
+  return
+end
+
 -- FZF configuration
 local g = vim.g
 local keymap = vim.keymap.set

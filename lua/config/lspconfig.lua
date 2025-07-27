@@ -1,5 +1,8 @@
--- LSP Configuration
-local lspconfig = require('lspconfig')
+-- Confirm available
+local ok, lspconfig = pcall(require, "lspconfig")
+if not ok then
+  return  -- plugin not available yet
+end
 
 -- Disable default LSP completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()

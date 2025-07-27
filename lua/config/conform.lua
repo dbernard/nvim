@@ -1,5 +1,8 @@
--- Formatting with conform.nvim
-local conform = require("conform")
+-- Confirm available
+local ok, conform = pcall(require, "conform")
+if not ok then
+  return  -- plugin not available yet
+end
 
 conform.setup({
   formatters_by_ft = {

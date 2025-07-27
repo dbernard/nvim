@@ -1,3 +1,9 @@
+-- Confirm available
+local ok, osc52 = pcall(require, "osc52")
+if not ok then
+  return  -- plugin not available yet
+end
+
 function copy()
   if vim.v.event.operator == 'y' and vim.v.event.regname == '' then
     require('osc52').copy_register('+')

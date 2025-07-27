@@ -1,5 +1,10 @@
+-- Confirm available
+local ok, telescope = pcall(require, "telescope")
+if not ok then
+  return  -- plugin not available yet
+end
+
 -- Telescope configuration with performance tweaks
-local telescope = require('telescope')
 local actions = require('telescope.actions')
 
 telescope.setup({

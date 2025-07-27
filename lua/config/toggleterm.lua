@@ -1,4 +1,10 @@
-require("toggleterm").setup({
+-- Confirm available
+local ok, toggleterm = pcall(require, "toggleterm")
+if not ok then
+  return  -- plugin not available yet
+end
+
+toggleterm.setup({
   size = 20,
   hide_numbers = true,
   shade_terminals = true,

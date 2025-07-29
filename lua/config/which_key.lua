@@ -54,6 +54,10 @@ wk.add({
         vim.cmd("ToggleTerm direction=float")
         vim.defer_fn(function() vim.cmd("startinsert!") end, 50)
       end, desc = "Toggle Terminal" },
+    { "<leader>tv", function()
+        vim.cmd("ToggleTerm direction=vertical")
+        vim.defer_fn(function() vim.cmd("startinsert!") end, 50)
+      end, desc = "Toggle Terminal" },
     -- markdown
     { "<leader>md", group = "render-markdown" },
     { "<leader>mde", "<cmd>RenderMarkdown enable<cr>", desc = "Render Markdown enable" },

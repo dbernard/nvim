@@ -2,7 +2,14 @@
 local keymap = vim.keymap.set
 
 -- TAB in general mode will move to text buffer
-keymap("n", "<TAB>", ":bnext<CR>", { silent = true })
+-- Block bnext in terminal buffers to protect me from myself
+keymap("n", "<Tab>", function()
+  if vim.bo.buftype ~= "terminal" then
+    vim.cmd("bnext")
+  else
+    vim.notify("Don't use :bnext in terminal windows", vim.log.levels.WARN)
+  end
+end, { silent = true })
 keymap("n", "<S-TAB>", ":bprevious<CR>", { silent = true })
 
 -- Close current buffer

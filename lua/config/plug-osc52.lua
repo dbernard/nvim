@@ -6,7 +6,7 @@ end
 
 function copy()
   if vim.v.event.operator == 'y' and vim.v.event.regname == '' then
-    require('osc52').copy_register('+')
+    require('osc52').copy(vim.fn.getreg('"'))
   end
 end
 

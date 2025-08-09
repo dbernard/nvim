@@ -36,6 +36,7 @@ telescope.setup({
       "*.temp",
       ".DS_Store",
       "Thumbs.db",
+      "*.po",
     },
     
     -- UI settings

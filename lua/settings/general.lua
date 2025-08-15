@@ -51,3 +51,6 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 -- Enable syntax highlighting and filetype detection
 vim.cmd("syntax enable")
 vim.cmd("filetype plugin indent on")
+
+-- Disable Copilot by default
+g.copilot_enabled = false

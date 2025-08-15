@@ -4,9 +4,12 @@ if not ok then
   return  -- plugin not available yet
 end
 
--- Disable default LSP completion
+-- Enable LSP completion with nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = false
+local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if ok then
+  capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+end
 
 -- Python LSP (pylsp)
 lspconfig.pylsp.setup {
@@ -14,11 +17,11 @@ lspconfig.pylsp.setup {
   settings = {
     pylsp = {
       plugins = {
-        -- Disable completion plugins
-        jedi_completion = { enabled = false },
+        -- Enable completion plugins
+        jedi_completion = { enabled = true },
         jedi_hover = { enabled = true },
         jedi_references = { enabled = true },
-        jedi_signature_help = { enabled = false },
+        jedi_signature_help = { enabled = true },
         jedi_symbols = { enabled = true },
         
         -- Disable formatting (handled by conform.nvim)

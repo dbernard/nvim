@@ -101,6 +101,16 @@ return packer.startup(function(use)
     config = function() require("config.luasnip") end
   } -- Lua-native snippets engine
   use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'hrsh7th/cmp-nvim-lsp',
+      -- 'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-cmdline',
+    },
+    config = function() require("config.nvim-cmp") end
+  } -- Completion engine
+  use {
     'ojroques/nvim-osc52',
     config = function() require("config.plug-osc52") end
   } -- Allow system clipboard access via SSH

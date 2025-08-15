@@ -68,6 +68,9 @@ wk.add({
     { "<leader>cps", "<cmd>Copilot status<cr>", desc = "Copilot status" },
     { "<leader>cpe", "<cmd>Copilot enable<cr>", desc = "Copilot enable" },
     { "<leader>cpd", "<cmd>Copilot disable<cr>", desc = "Copilot disable" },
+    -- Toggles
+    { "<leader>x", group = "toggles" },
+    { "<leader>xc", "<cmd>CmpToggle<cr>", desc = "Toggle completion popup" },
     -- LSP
     { "<leader>l", group = "lsp" },
     { "<leader>ld", function() vim.lsp.buf.definition() end, desc = "Go to Definition" },

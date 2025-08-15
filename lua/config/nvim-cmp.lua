@@ -3,7 +3,28 @@ if not ok then
   return
 end
 
+-- Global variable to track completion state (disabled by default)
+vim.g.cmp_enabled = false
+
+-- Function to toggle completion
+local function toggle_completion()
+  vim.g.cmp_enabled = not vim.g.cmp_enabled
+  if vim.g.cmp_enabled then
+    cmp.setup.buffer({ enabled = true })
+    print("Completion enabled")
+  else
+    cmp.setup.buffer({ enabled = false })
+    print("Completion disabled")
+  end
+end
+
+-- Make toggle function globally available
+vim.api.nvim_create_user_command('CmpToggle', toggle_completion, {})
+
 cmp.setup({
+  enabled = function()
+    return vim.g.cmp_enabled
+  end,
   mapping = cmp.mapping.preset.insert({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -24,8 +45,9 @@ cmp.setup({
   },
 })
 
--- Command line completion
+-- Command line completion (always enabled)
 cmp.setup.cmdline({ '/', '?' }, {
+  enabled = true,
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = 'buffer' }
@@ -33,6 +55,7 @@ cmp.setup.cmdline({ '/', '?' }, {
 })
 
 cmp.setup.cmdline(':', {
+  enabled = true,
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
     { name = 'path' }

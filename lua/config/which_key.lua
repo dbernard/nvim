@@ -21,6 +21,27 @@ wk.add({
     { "<leader>fm", "<cmd>Marks<cr>", desc = "Search Marks" },
     { "<leader>fh", "<cmd>RG<cr>", desc = "Advanced Ripgrep" },
     { "<leader>fo", function() require("conform").format({ async = true, lsp_fallback = true }) end, desc = "Format File" },
+    -- Telescope symbols finder
+    { "<leader>fs", group = "symbols" },
+    {
+      "<leader>fsa",
+      builtin.lsp_document_symbols,
+      desc = "All Symbols (current file)"
+    },
+    {
+      "<leader>fsc",
+      function() builtin.lsp_document_symbols({ symbols = { "class" } }) end,
+      desc = "Classes (current file)"
+    },
+    {
+      "<leader>fsm",
+      function()
+        builtin.lsp_document_symbols({
+          symbols = { "function", "method" },
+        })
+      end,
+      desc = "Methods/Functions (current file)"
+    },
     -- git
     { "<leader>g", group = "git" },
     { "<leader>gb", "<cmd>Git blame<cr>", desc = "Git Blame" },

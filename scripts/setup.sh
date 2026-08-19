@@ -34,9 +34,22 @@ warnmissingrg() {
     echo " - ⚠️  ripgrep is not installed. You'll want to install it for fzf!"
 }
 
+# Python packages go in a dedicated venv (~/.venvs/nvim — the first candidate
+# init.lua checks for python3_host_prog). Installing with bare pip3 breaks on
+# PEP-668 "externally managed" systems (Debian 12+, Ubuntu 23+).
+VENV="${HOME}/.venvs/nvim"
+
+ensurevenv() {
+    if [ ! -x "${VENV}/bin/python" ]; then
+        echo " - Creating Python venv at ${VENV}..."
+        python3 -m venv "${VENV}"
+    fi
+    echo " - ✅ venv ready (${VENV})"
+}
+
 installpynvim() {
     echo " - ❌ pynvim missing. Installing it now..."
-    pip3 install pynvim
+    "${VENV}/bin/pip" install pynvim
     echo " - ✅ pynvim installed"
 }
 
@@ -48,7 +61,12 @@ installplugins() {
 
 installdeps() {
     echo "Installing Python dependencies..."
-    pip3 install isort black mypy 'python-lsp-server[all]'
+    "${VENV}/bin/pip" install isort black mypy 'python-lsp-server[all]'
+    # expose the CLI tools (pylsp for LSP, formatters) outside the venv
+    mkdir -p "${HOME}/.local/bin"
+    for tool in pylsp black isort mypy; do
+        ln -sf "${VENV}/bin/${tool}" "${HOME}/.local/bin/${tool}"
+    done
     echo " - ✅ Python dependencies installed (isort, black, mypy, python-lsp-server)"
 }
 
@@ -71,8 +89,9 @@ which pip3 >/dev/null && echo " - ✅ pip3 installed" || errormissingpip
 # install node and neovim support
 which node >/dev/null && echo " - ✅ node installed" || errormissingnode
 
-# install pynvim
-pip3 list | grep pynvim >/dev/null && echo " - ✅ pynvim installed" || installpynvim
+# python venv + pynvim
+ensurevenv
+"${VENV}/bin/pip" show pynvim >/dev/null 2>&1 && echo " - ✅ pynvim installed" || installpynvim
 
 installplugins
 

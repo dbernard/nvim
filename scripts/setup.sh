@@ -40,8 +40,11 @@ warnmissingrg() {
 VENV="${HOME}/.venvs/nvim"
 
 ensurevenv() {
-    if [ ! -x "${VENV}/bin/python" ]; then
+    # rebuild if the venv's python no longer runs, e.g. after Homebrew removes
+    # the Python it was created from
+    if ! "${VENV}/bin/python" -c '' 2>/dev/null; then
         echo " - Creating Python venv at ${VENV}..."
+        rm -rf "${VENV}"
         python3 -m venv "${VENV}"
     fi
     echo " - ✅ venv ready (${VENV})"

@@ -47,7 +47,3 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = vim.env.MYVIMRC,
   command = "source %"
 })
-
--- Enable syntax highlighting and filetype detection
-vim.cmd("syntax enable")
-vim.cmd("filetype plugin indent on")

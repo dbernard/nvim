@@ -43,7 +43,7 @@ return packer.startup(function(use)
     'navarasu/onedark.nvim',
     config = function() require('onedark').load() end
   }
-  use 'kyazdani42/nvim-web-devicons' -- Devicons for Telescope, etc.
+  use 'nvim-tree/nvim-web-devicons' -- Devicons for Telescope, etc.
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true },
@@ -60,7 +60,7 @@ return packer.startup(function(use)
   }
   use 'airblade/vim-rooter' -- Change vim's working dir for fzf
   use {
-    'norcalli/nvim-colorizer.lua',
+    'catgoose/nvim-colorizer.lua',
     config = function() require("config.plug-colorizer") end
   } -- Shows hex/rgb/etc colors
   use {
@@ -69,6 +69,8 @@ return packer.startup(function(use)
   }
   use {
     'nvim-treesitter/nvim-treesitter',
+    branch = 'main',
+    run = ':TSUpdate',
     config = function() require("config.treesitter") end
   }
   use 'tpope/vim-fugitive' -- Git interface
@@ -95,7 +97,7 @@ return packer.startup(function(use)
     'nvim-telescope/telescope.nvim', -- Fuzzy finder
     config = function() require("config.telescope-config") end
   }
-    use 'tpope/vim-commentary' -- Commenting across filetypes
+  use 'tpope/vim-commentary' -- Commenting across filetypes
   use {
     'L3MON4D3/LuaSnip',
     config = function() require("config.luasnip") end

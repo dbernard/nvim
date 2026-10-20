@@ -73,18 +73,11 @@ else
   end)
 end
 
--- Diagnostic configuration
+-- Diagnostic configuration (no sign column glyphs; rely on underline/virtual text)
 vim.diagnostic.config({
   virtual_text = true,
-  signs = true,
+  signs = false,
   underline = true,
   update_in_insert = false,
   severity_sort = false,
 })
-
--- Diagnostic signs (blank text = rely on number/underline/virtual text)
-local signs = { Error = "", Warn = "", Hint = "", Info = "" }
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end

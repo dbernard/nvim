@@ -16,27 +16,18 @@ ls.config.set_config({
 })
 
 -- Basic LuaSnip key mappings
-vim.keymap.set({"i"}, "<Tab>", function()
-  if ls.expand_or_jumpable() then
-    ls.expand_or_jump()
-  else
-    return "<Tab>"
-  end
-end, {silent = true, expr = true})
+-- Insert-mode <Tab> is a Vimscript expr map (not a Lua callback) so copilot.vim
+-- can wrap it: <Tab> accepts a Copilot suggestion when one is shown, and
+-- otherwise falls through to expanding/jumping the snippet.
+vim.cmd([[imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>']])
 
 vim.keymap.set({"i", "s"}, "<S-Tab>", function()
-  if ls.jumpable(-1) then
-    ls.jump(-1)
-  else
-    return "<S-Tab>"
-  end
-end, {silent = true, expr = true})
+  return ls.jumpable(-1) and "<Plug>luasnip-jump-prev" or "<S-Tab>"
+end, {silent = true, expr = true, remap = true})
 
 vim.keymap.set({"s"}, "<Tab>", function()
-  if ls.jumpable(1) then
-    ls.jump(1)
-  end
-end, {silent = true})
+  return ls.jumpable(1) and "<Plug>luasnip-jump-next" or "<Tab>"
+end, {silent = true, expr = true, remap = true})
 
 -- Load snippets from lua/snippets/ directory
 require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/lua/snippets/"})

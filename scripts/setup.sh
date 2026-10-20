@@ -34,6 +34,10 @@ warnmissingrg() {
     echo " - ⚠️  ripgrep is not installed. You'll want to install it for fzf!"
 }
 
+warnmissingtreesitter() {
+    echo " - ⚠️  tree-sitter CLI is not installed. It's needed to install treesitter parsers (brew install tree-sitter-cli)"
+}
+
 # Python packages go in a dedicated venv (~/.venvs/nvim — the first candidate
 # init.lua checks for python3_host_prog). Installing with bare pip3 breaks on
 # PEP-668 "externally managed" systems (Debian 12+, Ubuntu 23+).
@@ -64,13 +68,13 @@ installplugins() {
 
 installdeps() {
     echo "Installing Python dependencies..."
-    "${VENV}/bin/pip" install isort black mypy 'python-lsp-server[all]'
+    "${VENV}/bin/pip" install isort black mypy flake8 'python-lsp-server[all]'
     # expose the CLI tools (pylsp for LSP, formatters) outside the venv
     mkdir -p "${HOME}/.local/bin"
-    for tool in pylsp black isort mypy; do
+    for tool in pylsp black isort mypy flake8; do
         ln -sf "${VENV}/bin/${tool}" "${HOME}/.local/bin/${tool}"
     done
-    echo " - ✅ Python dependencies installed (isort, black, mypy, python-lsp-server)"
+    echo " - ✅ Python dependencies installed (isort, black, mypy, flake8, python-lsp-server)"
 }
 
 echo "##########################"
@@ -85,6 +89,9 @@ which nvim >/dev/null && echo " - ✅ Neovim installed" || errormissingnvim
 
 # check for ripgrep
 which rg >/dev/null && echo " - ✅ ripgrep installed" || warnmissingrg
+
+# check for tree-sitter CLI (nvim-treesitter compiles parsers with it)
+which tree-sitter >/dev/null && echo " - ✅ tree-sitter installed" || warnmissingtreesitter
 
 # install pip
 which pip3 >/dev/null && echo " - ✅ pip3 installed" || errormissingpip

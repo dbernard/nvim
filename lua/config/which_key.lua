@@ -20,7 +20,7 @@ wk.add({
     { "<leader>fb", "<cmd>Buffers<cr>", desc = "Search Buffers" },
     { "<leader>fm", "<cmd>Marks<cr>", desc = "Search Marks" },
     { "<leader>fh", "<cmd>RG<cr>", desc = "Advanced Ripgrep" },
-    { "<leader>fo", function() require("conform").format({ async = true, lsp_fallback = true }) end, desc = "Format File" },
+    { "<leader>fo", function() require("conform").format({ async = true, lsp_format = "fallback" }) end, desc = "Format File" },
     -- Telescope symbols finder
     { "<leader>fs", group = "symbols" },
     {
@@ -99,8 +99,8 @@ wk.add({
     { "<leader>ln", function() vim.lsp.buf.rename() end, desc = "Rename" },
     { "<leader>lh", function() vim.lsp.buf.hover() end, desc = "Hover" },
     -- Diagnostics
-    { "<C-j>", function() vim.diagnostic.goto_next() end, desc = "Next Diagnostic" },
-    { "<C-k>", function() vim.diagnostic.goto_prev() end, desc = "Previous Diagnostic" },
+    { "<C-j>", function() vim.diagnostic.jump({ count = 1, float = true }) end, desc = "Next Diagnostic" },
+    { "<C-k>", function() vim.diagnostic.jump({ count = -1, float = true }) end, desc = "Previous Diagnostic" },
     -- Direct mappings
     { "gd", function() vim.lsp.buf.definition() end, desc = "Go to Definition" },
     { "gr", function() vim.lsp.buf.references() end, desc = "References" },
